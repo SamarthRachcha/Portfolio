@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Samarth Rachcha — portfolio
 
-## Getting Started
+A single-page portfolio built from Samarth's public repositories and résumé.
+The through-line is machine-learning systems taken all the way to an interface:
+crowd forecasting, a financial-advisor agent, a recommender, a from-scratch
+classifier, and the dashboards and APIs around them.
 
-First, run the development server:
+## Stack
+
+- Next.js 16 (App Router, Turbopack, Cache Components)
+- TypeScript
+- Tailwind CSS 4
+- shadcn/ui (`radix-nova` preset, Radix primitives)
+- Motion (`motion/react`)
+- Lenis (`lenis/react`)
+- Lucide icons
+
+No Three.js, no WebGL. The hero figure is hand-authored SVG.
+
+## Run
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
+pnpm dev      # http://localhost:3000
+pnpm build
+pnpm lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+app/
+  layout.tsx              fonts, metadata, no-JS reveal fallback
+  page.tsx                section composition
+  globals.css             tokens, base styles, motion keyframes
+components/
+  decision-boundary.tsx   SVG hero figure
+  smooth-scroll.tsx       Lenis root provider
+  reveal.tsx              Motion scroll reveal
+  site-header.tsx         sticky header + scroll progress
+  hero.tsx
+  work-index.tsx          expandable featured-project rows
+  archive-index.tsx       compact repository list
+  approach.tsx            pipeline strip + principles
+  toolbox.tsx
+  about.tsx               bio + education/experience/recognition
+  contact.tsx
+  site-footer.tsx
+  section.tsx             shared section shell
+  ui/                     shadcn components
+lib/
+  projects.ts             all portfolio copy and links
+  utils.ts                cn re-export
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+All copy lives in `lib/projects.ts` and the section components; there is no CMS.
 
-## Learn More
+## Content sources
 
-To learn more about Next.js, take a look at the following resources:
+- Repositories: <https://github.com/SamarthRachcha>
+- Résumé supplied by Samarth (education, experience, project metrics,
+  recognition), November 2026
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The résumé's phone number is intentionally **not** published. Email, LinkedIn,
+and GitHub are the public contact points.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Design notes
 
-## Deploy on Vercel
+Editorial "lab index" direction: sage paper, near-black ink, ultramarine accent,
+vermilion signals, Instrument Serif display type, Instrument Sans body, Geist
+Mono metadata. Hairline rules and a 12-column asymmetric grid instead of cards.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Motion is limited to one page-load sequence, scroll reveals, the header progress
+line, and the expandable work rows. `prefers-reduced-motion` is honoured by both
+CSS and Lenis, and a `<noscript>` fallback keeps revealed content visible.

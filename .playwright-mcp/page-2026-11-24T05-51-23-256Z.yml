@@ -1,0 +1,285 @@
+- generic [active] [ref=f3e1]:
+  - banner [ref=f3e2]:
+    - generic [ref=f3e3]:
+      - link "Samarth Rachcha, back to top" [ref=f3e4] [cursor=pointer]:
+        - /url: "#top"
+        - generic [ref=f3e5]: Samarth Rachcha
+      - generic [ref=f3e6]:
+        - navigation "Sections" [ref=f3e7]:
+          - link "Work" [ref=f3e8] [cursor=pointer]:
+            - /url: "#work"
+          - link "Approach" [ref=f3e9] [cursor=pointer]:
+            - /url: "#approach"
+          - link "Toolbox" [ref=f3e10] [cursor=pointer]:
+            - /url: "#toolbox"
+          - link "About" [ref=f3e11] [cursor=pointer]:
+            - /url: "#about"
+        - link "Samarth Rachcha on GitHub" [ref=f3e12] [cursor=pointer]:
+          - /url: https://github.com/SamarthRachcha
+  - main [ref=f3e15]:
+    - generic [ref=f3e16]:
+      - generic [ref=f3e17]:
+        - paragraph [ref=f3e18]: Portfolio — 2026
+        - paragraph [ref=f3e20]: Machine learning · Interfaces · Data
+      - generic [ref=f3e21]:
+        - generic [ref=f3e22]:
+          - heading "When the model works, the work has just begun." [level=1] [ref=f3e23]:
+            - generic [ref=f3e24]: When the model works,
+            - generic [ref=f3e25]:
+              - text: the work has
+              - emphasis [ref=f3e26]: just begun
+              - text: .
+          - paragraph [ref=f3e27]: I build learning systems end to end — the data path, the model, and the interface that puts it in someone's hands. Four of them are indexed below.
+          - generic [ref=f3e28]:
+            - link "See the work" [ref=f3e29] [cursor=pointer]:
+              - /url: "#work"
+            - link "GitHub" [ref=f3e30] [cursor=pointer]:
+              - /url: https://github.com/SamarthRachcha
+        - complementary [ref=f3e31]:
+          - paragraph [ref=f3e32]: At a glance
+          - generic [ref=f3e33]:
+            - generic [ref=f3e34]:
+              - term [ref=f3e35]: Public repositories
+              - definition [ref=f3e36]: "14"
+            - generic [ref=f3e37]:
+              - term [ref=f3e38]: Featured systems
+              - definition [ref=f3e39]: "04"
+            - generic [ref=f3e40]:
+              - term [ref=f3e41]: Primary stack
+              - definition [ref=f3e42]: Python / TypeScript
+            - generic [ref=f3e43]:
+              - term [ref=f3e44]: Latest work
+              - definition [ref=f3e45]: "2026"
+          - link "Source of truth — GitHub" [ref=f3e46] [cursor=pointer]:
+            - /url: https://github.com/SamarthRachcha?tab=repositories
+    - figure [ref=f3e47]:
+      - generic [ref=f3e48]:
+        - generic [ref=f3e49]:
+          - generic [ref=f3e50]: Fig. 01 — Decision boundary
+          - generic [ref=f3e51]: n = 47 · 3 misclassified
+        - img "A two-class decision boundary with scattered points A sloped curve separates dark class A points above from blue class B points below. Three red points sit on the wrong side of the line." [ref=f3e52]
+        - generic [ref=f3e110]:
+          - generic [ref=f3e111]: Two classes, one boundary, and the three points it gets wrong.
+          - generic [ref=f3e112]:
+            - generic [ref=f3e113]: Class A
+            - generic [ref=f3e115]: Class B
+            - generic [ref=f3e117]: Misclassified
+    - generic [ref=f3e120]:
+      - generic [ref=f3e121]:
+        - generic [ref=f3e122]:
+          - generic [ref=f3e123]: "01"
+          - heading "Selected work" [level=2] [ref=f3e124]
+        - generic [ref=f3e125]:
+          - paragraph [ref=f3e126]: Four systems, end to end.
+          - paragraph [ref=f3e127]: Open a row for the parts that do not fit in a one-line summary. Six more repositories are in the archive below.
+      - generic [ref=f3e128]:
+        - list [ref=f3e130]:
+          - listitem [ref=f3e131]:
+            - heading [level=3] [ref=f3e132]:
+              - button "Crowd Density Advisor Counting and forecasting street crowds from video. 2026" [ref=f3e133]:
+                - generic [aria-hidden] [ref=f3e134]: "01"
+                - generic [ref=f3e135]: Crowd Density Advisor
+                - generic [ref=f3e136]: Counting and forecasting street crowds from video.
+                - generic [ref=f3e137]: "2026"
+          - listitem [ref=f3e141]:
+            - heading [level=3] [ref=f3e142]:
+              - button "Digit Recognition from Scratch An MNIST classifier written as NumPy matrix math. 2024" [ref=f3e143]:
+                - generic [aria-hidden] [ref=f3e144]: "02"
+                - generic [ref=f3e145]: Digit Recognition from Scratch
+                - generic [ref=f3e146]: An MNIST classifier written as NumPy matrix math.
+                - generic [ref=f3e147]: "2024"
+          - listitem [ref=f3e151]:
+            - heading [level=3] [ref=f3e152]:
+              - button "Financial Advisor Agent A conversational finance tool with real calculators behind it. 2026" [ref=f3e153]:
+                - generic [aria-hidden] [ref=f3e154]: "03"
+                - generic [ref=f3e155]: Financial Advisor Agent
+                - generic [ref=f3e156]: A conversational finance tool with real calculators behind it.
+                - generic [ref=f3e157]: "2026"
+          - listitem [ref=f3e161]:
+            - heading [level=3] [ref=f3e162]:
+              - button "Habit Tracker A small, typed habit grid built with React and date-fns. 2026" [ref=f3e163]:
+                - generic [aria-hidden] [ref=f3e164]: "04"
+                - generic [ref=f3e165]: Habit Tracker
+                - generic [ref=f3e166]: A small, typed habit grid built with React and date-fns.
+                - generic [ref=f3e167]: "2026"
+        - generic [ref=f3e171]:
+          - generic [ref=f3e172]:
+            - heading "Also in the archive" [level=3] [ref=f3e173]
+            - generic [ref=f3e174]: 06 repos
+          - list [ref=f3e175]:
+            - listitem [ref=f3e176]:
+              - link "Text generation with LSTMs Word-level language model over a news corpus. 2026" [ref=f3e177] [cursor=pointer]:
+                - /url: https://github.com/SamarthRachcha/Text_Generation_AI
+                - generic [ref=f3e178]: Text generation with LSTMs
+                - generic [ref=f3e179]: Word-level language model over a news corpus.
+                - generic [ref=f3e180]: "2026"
+            - listitem [ref=f3e185]:
+              - link "Twitter bot detection TF-IDF and logistic regression on tweet metadata. 2024" [ref=f3e186] [cursor=pointer]:
+                - /url: https://github.com/SamarthRachcha/NLP-Project
+                - generic [ref=f3e187]: Twitter bot detection
+                - generic [ref=f3e188]: TF-IDF and logistic regression on tweet metadata.
+                - generic [ref=f3e189]: "2024"
+            - listitem [ref=f3e194]:
+              - link "MobileNetV2 inference Image classification with a pre-trained CNN. 2024" [ref=f3e195] [cursor=pointer]:
+                - /url: https://github.com/SamarthRachcha/Deep-Learning-Project
+                - generic [ref=f3e196]: MobileNetV2 inference
+                - generic [ref=f3e197]: Image classification with a pre-trained CNN.
+                - generic [ref=f3e198]: "2024"
+            - listitem [ref=f3e203]:
+              - link "Beverage recommender PySpark analysis of beer review data. 2024" [ref=f3e204] [cursor=pointer]:
+                - /url: https://github.com/SamarthRachcha/Big-Data-Project
+                - generic [ref=f3e205]: Beverage recommender
+                - generic [ref=f3e206]: PySpark analysis of beer review data.
+                - generic [ref=f3e207]: "2024"
+            - listitem [ref=f3e212]:
+              - link "To-do list React app with localStorage persistence. 2026" [ref=f3e213] [cursor=pointer]:
+                - /url: https://github.com/SamarthRachcha/To-Do-List
+                - generic [ref=f3e214]: To-do list
+                - generic [ref=f3e215]: React app with localStorage persistence.
+                - generic [ref=f3e216]: "2026"
+            - listitem [ref=f3e221]:
+              - link "PC parts storefront Static multi-page shop with PHP authentication. 2024" [ref=f3e222] [cursor=pointer]:
+                - /url: https://github.com/SamarthRachcha/Website
+                - generic [ref=f3e223]: PC parts storefront
+                - generic [ref=f3e224]: Static multi-page shop with PHP authentication.
+                - generic [ref=f3e225]: "2024"
+          - generic [ref=f3e230]:
+            - link "All fourteen repositories" [ref=f3e231] [cursor=pointer]:
+              - /url: https://github.com/SamarthRachcha?tab=repositories
+            - generic [ref=f3e235]: Updated November 2026
+    - generic [ref=f3e237]:
+      - generic [ref=f3e238]:
+        - generic [ref=f3e239]:
+          - generic [ref=f3e240]: "02"
+          - heading "Approach" [level=2] [ref=f3e241]
+        - generic [ref=f3e242]:
+          - paragraph [ref=f3e243]: Measured against something simple.
+          - paragraph [ref=f3e244]: "The habit behind every project here: make the baseline visible before trusting the model, and leave the data path open."
+      - generic [ref=f3e245]:
+        - generic [ref=f3e247]:
+          - paragraph [ref=f3e248]: The crowd-density pipeline
+          - list [ref=f3e249]:
+            - listitem [ref=f3e250]:
+              - generic [ref=f3e251]: extract_frames.py
+            - listitem [ref=f3e254]:
+              - generic [ref=f3e255]: csrnet_model.py
+            - listitem [ref=f3e258]:
+              - generic [ref=f3e259]: build_timeseries.py
+            - listitem [ref=f3e262]:
+              - generic [ref=f3e263]: train_lstm.py
+            - listitem [ref=f3e266]:
+              - generic [ref=f3e267]: FastAPI + Streamlit
+          - paragraph [ref=f3e268]: Five stages, each a script you can run on its own. The forecast is only as good as the counts that feed it.
+        - generic [ref=f3e270]:
+          - generic [ref=f3e271]:
+            - text: "01"
+            - heading "Start with the baseline" [level=3] [ref=f3e272]
+            - paragraph [ref=f3e273]: The crowd forecaster is measured against a day-of-week and hour-of-day average before the LSTM gets any credit. If the simple thing wins, say so.
+          - generic [ref=f3e274]:
+            - text: "02"
+            - heading "Keep the data path visible" [level=3] [ref=f3e275]
+            - paragraph [ref=f3e276]: Frames become counts, counts become a time series, the series becomes a forecast. Every step is a file you can inspect and re-run.
+          - generic [ref=f3e277]:
+            - text: "03"
+            - heading "Finish the interface" [level=3] [ref=f3e278]
+            - paragraph [ref=f3e279]: A model that only exists in a notebook is half a project. I ship the dashboard, the API, or the chat UI that puts it in someone's hands.
+    - generic [ref=f3e281]:
+      - generic [ref=f3e282]:
+        - generic [ref=f3e283]:
+          - generic [ref=f3e284]: "03"
+          - heading "Toolbox" [level=2] [ref=f3e285]
+        - generic [ref=f3e286]:
+          - paragraph [ref=f3e287]: The instruments I reach for.
+          - paragraph [ref=f3e288]: Grouped by what they are for, not by how impressive they sound. Everything listed has shipped in at least one repository.
+      - generic [ref=f3e290]:
+        - generic [ref=f3e292]:
+          - generic [ref=f3e293]:
+            - heading "Modelling" [level=3] [ref=f3e294]
+            - generic [ref=f3e295]: "05"
+          - list [ref=f3e296]:
+            - listitem [ref=f3e297]:
+              - generic [ref=f3e298]: PyTorch
+            - listitem [ref=f3e299]:
+              - generic [ref=f3e300]: TensorFlow / Keras
+            - listitem [ref=f3e301]:
+              - generic [ref=f3e302]: scikit-learn
+            - listitem [ref=f3e303]:
+              - generic [ref=f3e304]: NumPy
+            - listitem [ref=f3e305]:
+              - generic [ref=f3e306]: pandas
+        - generic [ref=f3e308]:
+          - generic [ref=f3e309]:
+            - heading "Interfaces" [level=3] [ref=f3e310]
+            - generic [ref=f3e311]: "07"
+          - list [ref=f3e312]:
+            - listitem [ref=f3e313]:
+              - generic [ref=f3e314]: Next.js
+            - listitem [ref=f3e315]:
+              - generic [ref=f3e316]: React
+            - listitem [ref=f3e317]:
+              - generic [ref=f3e318]: TypeScript
+            - listitem [ref=f3e319]:
+              - generic [ref=f3e320]: Tailwind CSS
+            - listitem [ref=f3e321]:
+              - generic [ref=f3e322]: Flask
+            - listitem [ref=f3e323]:
+              - generic [ref=f3e324]: FastAPI
+            - listitem [ref=f3e325]:
+              - generic [ref=f3e326]: Streamlit
+        - generic [ref=f3e328]:
+          - generic [ref=f3e329]:
+            - heading "Data & tooling" [level=3] [ref=f3e330]
+            - generic [ref=f3e331]: "06"
+          - list [ref=f3e332]:
+            - listitem [ref=f3e333]:
+              - generic [ref=f3e334]: PySpark
+            - listitem [ref=f3e335]:
+              - generic [ref=f3e336]: NLTK
+            - listitem [ref=f3e337]:
+              - generic [ref=f3e338]: OpenCV
+            - listitem [ref=f3e339]:
+              - generic [ref=f3e340]: joblib
+            - listitem [ref=f3e341]:
+              - generic [ref=f3e342]: Git
+            - listitem [ref=f3e343]:
+              - generic [ref=f3e344]: date-fns
+    - generic [ref=f3e346]:
+      - generic [ref=f3e347]:
+        - generic [ref=f3e348]:
+          - generic [ref=f3e349]: "04"
+          - heading "About" [level=2] [ref=f3e350]
+        - paragraph [ref=f3e352]: A short note on how I work.
+      - generic [ref=f3e354]:
+        - generic [ref=f3e355]:
+          - paragraph [ref=f3e356]: I learn a stack by shipping something with it.
+          - paragraph [ref=f3e357]: Samarth Rachcha
+          - link "Fourteen public repositories" [ref=f3e358] [cursor=pointer]:
+            - /url: https://github.com/SamarthRachcha
+        - generic [ref=f3e363]:
+          - paragraph [ref=f3e364]: "Most of what I know came from taking a question all the way to a running thing: a notebook that had to become an API, a model that had to survive a dashboard, a classifier that had to be explained to someone else."
+          - paragraph [ref=f3e365]: The projects here are uneven on purpose. Some are written from scratch to understand the math — the digit recogniser is NumPy forward passes and hand-derived gradients. Others lean on a pre-trained model because the interesting part was the pipeline around it.
+          - paragraph [ref=f3e366]: "The through-line is finishing: a baseline to compare against, a file someone else can re-run, and an interface that does not need a README to operate."
+    - generic [ref=f3e368]:
+      - generic [ref=f3e369]:
+        - generic [ref=f3e370]: 05 — Contact
+        - generic [ref=f3e371]: No forms · No scheduling links
+      - generic [ref=f3e372]:
+        - generic [ref=f3e373]:
+          - heading [level=2] [ref=f3e374]:
+            - text: Let's build the part
+            - emphasis [ref=f3e375]: after
+            - text: the notebook.
+          - paragraph [ref=f3e376]: If a model works but nobody can use it yet, that is the interesting part. The source for everything on this page is public — start there, or open an issue on any repository.
+          - link "github.com/SamarthRachcha" [ref=f3e377] [cursor=pointer]:
+            - /url: https://github.com/SamarthRachcha
+        - generic [ref=f3e384]:
+          - paragraph [ref=f3e385]: Elsewhere
+          - paragraph [ref=f3e386]: No live demos yet. The repositories are the record — code, notebooks, and the occasional README.
+  - contentinfo [ref=f3e387]:
+    - generic [ref=f3e388]:
+      - paragraph [ref=f3e389]: © 2026 Samarth Rachcha
+      - paragraph [ref=f3e390]: Next.js · Tailwind CSS · Motion · Lenis
+      - link "Back to top" [ref=f3e391] [cursor=pointer]:
+        - /url: "#top"
+  - button "Open Next.js Dev Tools" [ref=f3e399] [cursor=pointer]
+  - alert [ref=f3e403]
