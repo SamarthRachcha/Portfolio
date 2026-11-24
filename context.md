@@ -26,9 +26,8 @@ interfaces around them.
 | Icons | lucide-react (brand icons are custom SVG) |
 | Motion | Motion 14 (`motion/react`) |
 | Smooth scroll | Lenis 1.3 (`lenis/react`, root instance + `anchors: true`) |
-| 3D | **Not used.** Three.js was explicitly excluded from the brief. |
 
-## Design direction
+## Design notes
 
 Working concept: **an engineer's lab index** — not a SaaS card grid and not the
 default cream/terracotta editorial look.
@@ -43,7 +42,7 @@ default cream/terracotta editorial look.
 - Data/year type: Geist Mono, used sparingly
 - Layout: 12-column, asymmetric, hairline rules, generous whitespace
 - Hero visual: hand-authored SVG decision boundary with scattered points and
-  three deliberately misclassified ones. No WebGL.
+  three deliberately misclassified ones.
 
 Motion is limited to one page-load sequence, quiet scroll reveals, the header
 scroll-progress line, and the expandable work rows. `prefers-reduced-motion`
@@ -87,7 +86,7 @@ creation date. `Machine-Learning-Project` duplicates the digit-recognition work
 and is not listed; `Calculator`, `DEC`, and `config` are coursework or scratch
 repos and are not listed.
 
-### Remaining gaps (need Samarth's input)
+### Remaining gaps (need your input)
 
 - Live demos or screenshots for the featured projects
 - Whether to publish the résumé PDF itself (contains a phone number)

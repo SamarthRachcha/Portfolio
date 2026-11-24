@@ -1,6 +1,6 @@
 # Samarth Rachcha — portfolio
 
-A single-page portfolio built from Samarth's public repositories and résumé.
+A single-page portfolio built from my public repositories and résumé.
 The through-line is machine-learning systems taken all the way to an interface:
 crowd forecasting, a financial-advisor agent, a recommender, a from-scratch
 classifier, and the dashboards and APIs around them.
@@ -14,8 +14,6 @@ classifier, and the dashboards and APIs around them.
 - Motion (`motion/react`)
 - Lenis (`lenis/react`)
 - Lucide icons
-
-No Three.js, no WebGL. The hero figure is hand-authored SVG.
 
 ## Run
 
@@ -54,22 +52,3 @@ lib/
 ```
 
 All copy lives in `lib/projects.ts` and the section components; there is no CMS.
-
-## Content sources
-
-- Repositories: <https://github.com/SamarthRachcha>
-- Résumé supplied by Samarth (education, experience, project metrics,
-  recognition), November 2026
-
-The résumé's phone number is intentionally **not** published. Email, LinkedIn,
-and GitHub are the public contact points.
-
-## Design notes
-
-Editorial "lab index" direction: sage paper, near-black ink, ultramarine accent,
-vermilion signals, Instrument Serif display type, Instrument Sans body, Geist
-Mono metadata. Hairline rules and a 12-column asymmetric grid instead of cards.
-
-Motion is limited to one page-load sequence, scroll reveals, the header progress
-line, and the expandable work rows. `prefers-reduced-motion` is honoured by both
-CSS and Lenis, and a `<noscript>` fallback keeps revealed content visible.
