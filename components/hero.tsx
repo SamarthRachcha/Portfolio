@@ -27,7 +27,7 @@ export function Hero() {
       </div>
 
       <div className="grid gap-10 pt-14 pb-16 md:grid-cols-12 md:gap-8 md:pt-24 md:pb-24">
-        <div className="md:col-span-12 lg:col-span-8">
+        <div className="md:col-span-12 xl:col-span-8">
           <h1 className="animate-rise font-serif text-[clamp(2.6rem,7.4vw,6.1rem)] leading-[0.94] tracking-[-0.035em]">
             <span className="block">When the model works,</span>
             <span className="block">
@@ -71,18 +71,18 @@ export function Hero() {
         </div>
 
         <aside
-          className="animate-rise md:col-span-12 lg:col-span-3 lg:col-start-10"
+          className="animate-rise md:col-span-12 xl:col-span-3 xl:col-start-10"
           style={{ animationDelay: "320ms" }}
         >
           <p className="label mb-3">At a glance</p>
-          <dl className="grid grid-cols-2 gap-px border-y border-rule bg-rule sm:grid-cols-4 lg:block lg:bg-transparent">
+          <dl className="grid grid-cols-2 gap-px border-y border-rule bg-rule sm:grid-cols-4 xl:block xl:bg-transparent">
             {facts.map((fact) => (
               <div
                 key={fact.label}
-                className="flex flex-col gap-1 bg-paper px-4 py-3 first:pl-0 last:pr-0 lg:flex-row lg:items-baseline lg:justify-between lg:gap-4 lg:border-b lg:border-rule lg:px-0 lg:py-3 lg:last:border-b-0"
+                className="flex flex-col gap-1 bg-paper px-4 py-3 first:pl-0 last:pr-0 xl:flex-row xl:items-baseline xl:justify-between xl:gap-4 xl:border-b xl:border-rule xl:px-0 xl:py-3 xl:last:border-b-0"
               >
                 <dt className="label text-ink-muted">{fact.label}</dt>
-                <dd className="font-mono text-[0.72rem] tracking-tight text-ink lg:text-right">
+                <dd className="font-mono text-[0.72rem] tracking-tight text-ink xl:text-right">
                   {fact.value}
                 </dd>
               </div>
