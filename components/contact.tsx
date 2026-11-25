@@ -1,6 +1,6 @@
-import { ArrowUpRight, Mail } from "lucide-react";
+import { ArrowUpRight, FileText, Mail } from "lucide-react";
 import { GitHubMark } from "@/components/icons";
-import { EMAIL, GITHUB_URL, LINKEDIN_URL } from "@/lib/projects";
+import { EMAIL, GITHUB_URL, LINKEDIN_URL, RESUME_URL } from "@/lib/projects";
 
 export function Contact() {
   return (
@@ -69,6 +69,15 @@ export function Contact() {
               >
                 LinkedIn
                 <ArrowUpRight aria-hidden="true" className="size-3.5" />
+              </a>
+
+              <a
+                href={RESUME_URL}
+                download="Samarth-Rachcha-Resume.pdf"
+                className="inline-flex items-center gap-2.5 border border-paper/25 px-4 py-3.5 font-mono text-[0.65rem] tracking-[0.1em] uppercase transition-colors duration-300 hover:border-paper hover:bg-paper hover:text-ink sm:text-[0.7rem]"
+              >
+                <FileText aria-hidden="true" className="size-3.5" />
+                Résumé (PDF)
               </a>
             </div>
           </div>

@@ -88,10 +88,23 @@ repos and are not listed.
 
 ### Remaining gaps (need your input)
 
-- Live demos or screenshots for the featured projects
-- Whether to publish the résumé PDF itself (contains a phone number)
+- Live demos or screenshots for the featured projects (no repo has a homepage
+  URL or committed image)
 - Deployment target/domain for `metadataBase` and OG images
 - Whether the Firebird VR role should have a longer write-up
+
+### Résumé PDF
+
+`public/samarth-rachcha-resume.pdf` is built from the LaTeX source in
+`~/Downloads/Samarth_Rachcha_Resume.tex` with the phone number removed. The
+`mailto:` link in the header is fixed up in that copy; everything else is
+unchanged. Rebuild after editing the source:
+
+```bash
+cp ~/Downloads/Samarth_Rachcha_Resume.tex /tmp/resume-build/
+# delete the "7755929201 $|$" line, compile twice with pdflatex
+cp /tmp/resume-build/Samarth_Rachcha_Resume.pdf public/samarth-rachcha-resume.pdf
+```
 
 ## Architecture
 
@@ -111,7 +124,7 @@ components/
   approach.tsx            pipeline strip + principles
   toolbox.tsx
   about.tsx               bio + education/experience/recognition
-  contact.tsx             email, GitHub, LinkedIn
+  contact.tsx             email, GitHub, LinkedIn, résumé
   site-footer.tsx
   section.tsx             shared section shell
   ui/                     shadcn components

@@ -1,7 +1,7 @@
-import { ArrowDownRight } from "lucide-react";
+import { ArrowDownRight, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { GitHubMark } from "@/components/icons";
-import { GITHUB_URL } from "@/lib/projects";
+import { GITHUB_URL, RESUME_URL } from "@/lib/projects";
 
 const facts = [
   { label: "Public repositories", value: "14" },
@@ -67,6 +67,14 @@ export function Hero() {
                 GitHub
               </a>
             </Button>
+            <a
+              href={RESUME_URL}
+              download="Samarth-Rachcha-Resume.pdf"
+              className="label ml-1 inline-flex items-center gap-2 text-ink-muted underline decoration-rule decoration-1 underline-offset-4 transition-colors hover:text-accent hover:decoration-accent"
+            >
+              <FileText aria-hidden="true" className="size-3" />
+              Résumé — PDF
+            </a>
           </div>
         </div>
 

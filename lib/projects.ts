@@ -19,6 +19,7 @@ export const GITHUB_URL = "https://github.com/SamarthRachcha";
 export const LINKEDIN_URL =
   "https://www.linkedin.com/in/samarth-r-38782b196/";
 export const EMAIL = "samarth.rachcha@gmail.com";
+export const RESUME_URL = "/samarth-rachcha-resume.pdf";
 
 export const projects: Project[] = [
   {
