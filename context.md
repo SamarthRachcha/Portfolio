@@ -43,6 +43,12 @@ default cream/terracotta editorial look.
 - Layout: 12-column, asymmetric, hairline rules, generous whitespace
 - Hero visual: hand-authored SVG decision boundary with scattered points and
   three deliberately misclassified ones.
+- Project visuals: one hand-authored SVG schematic per featured project, inside
+  its expanded row (`components/project-figure.tsx`). Numbered `Fig. 02`–`Fig.
+  06` because the hero figure is `Fig. 01`. Each plate states "Diagram, not a
+  screenshot" and is labelled as a schematic, so nothing implies a real capture.
+  On narrow screens the plate keeps a 520px minimum width and scrolls
+  horizontally (with a `Scroll →` hint and a styled thin scrollbar).
 
 Motion is limited to one page-load sequence, quiet scroll reveals, the header
 scroll-progress line, and the expandable work rows. `prefers-reduced-motion`
@@ -88,8 +94,8 @@ repos and are not listed.
 
 ### Remaining gaps (need your input)
 
-- Live demos or screenshots for the featured projects (no repo has a homepage
-  URL or committed image)
+- Live demos: no featured repo has a deployed URL. `Project.demo` is already
+  wired in `lib/projects.ts`; set it and a "Live demo" link appears in the row.
 - Deployment target/domain for `metadataBase` and OG images
 - Whether the Firebird VR role should have a longer write-up
 
@@ -120,6 +126,7 @@ components/
   site-header.tsx         sticky header + scroll progress
   hero.tsx
   work-index.tsx          expandable project rows
+  project-figure.tsx      one SVG schematic per featured project
   archive-index.tsx       compact repository table
   approach.tsx            pipeline strip + principles
   toolbox.tsx

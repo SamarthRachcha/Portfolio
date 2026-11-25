@@ -31,11 +31,36 @@
   --radius: 0.25rem;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
 @media print {
   [data-reveal] {
     opacity: 1 !important;
     transform: none !important;
   }
+}
+
+.scroll-x {
+  scrollbar-width: thin;
+  scrollbar-color: var(--rule) transparent;
+}
+
+.scroll-x::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scroll-x::-webkit-scrollbar-thumb {
+  background: var(--rule);
+}
+
+.scroll-x::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 @theme inline {

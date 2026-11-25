@@ -4,6 +4,7 @@ import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { ArrowUpRight, Plus } from "lucide-react";
 import { projects } from "@/lib/projects";
+import { ProjectFigure } from "@/components/project-figure";
 import { Reveal } from "@/components/reveal";
 import { cn } from "@/lib/utils";
 
@@ -80,6 +81,10 @@ export function WorkIndex() {
                     className="overflow-hidden"
                   >
                     <div className="grid gap-8 pb-9 md:grid-cols-12 md:gap-6 md:pb-11">
+                      <div className="min-w-0 md:col-span-12 xl:col-span-10 xl:col-start-2">
+                        <ProjectFigure slug={project.slug} index={index} />
+                      </div>
+
                       <ul className="space-y-3 md:col-span-6 md:col-start-2">
                         {project.details.map((detail) => (
                           <li
@@ -110,20 +115,39 @@ export function WorkIndex() {
                           ))}
                         </ul>
 
-                        <a
-                          href={project.repo}
-                          target="_blank"
-                          rel="noreferrer noopener"
-                          className="group/repo label mt-6 inline-flex items-center gap-2 border-b border-ink/25 pb-1.5 text-ink transition-colors hover:border-accent hover:text-accent"
-                        >
-                          <span className="normal-case tracking-[0.04em]">
-                            {repoName}
-                          </span>
-                          <ArrowUpRight
-                            aria-hidden="true"
-                            className="size-3 transition-transform duration-300 group-hover/repo:-translate-y-0.5 group-hover/repo:translate-x-0.5"
-                          />
-                        </a>
+                        <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
+                          <a
+                            href={project.repo}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            className="group/repo label inline-flex items-center gap-2 border-b border-ink/25 pb-1.5 text-ink transition-colors hover:border-accent hover:text-accent"
+                          >
+                            <span className="normal-case tracking-[0.04em]">
+                              {repoName}
+                            </span>
+                            <ArrowUpRight
+                              aria-hidden="true"
+                              className="size-3 transition-transform duration-300 group-hover/repo:-translate-y-0.5 group-hover/repo:translate-x-0.5"
+                            />
+                          </a>
+
+                          {project.demo ? (
+                            <a
+                              href={project.demo}
+                              target="_blank"
+                              rel="noreferrer noopener"
+                              className="group/demo label inline-flex items-center gap-2 border-b border-ink/25 pb-1.5 text-ink transition-colors hover:border-accent hover:text-accent"
+                            >
+                              <span className="normal-case tracking-[0.04em]">
+                                Live demo
+                              </span>
+                              <ArrowUpRight
+                                aria-hidden="true"
+                                className="size-3 transition-transform duration-300 group-hover/demo:-translate-y-0.5 group-hover/demo:translate-x-0.5"
+                              />
+                            </a>
+                          ) : null}
+                        </div>
                       </div>
                     </div>
                   </motion.div>

@@ -6,6 +6,7 @@ export type Project = {
   stack: string[];
   details: string[];
   repo: string;
+  demo?: string;
 };
 
 export type ArchiveProject = {
