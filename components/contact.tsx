@@ -13,7 +13,7 @@ export function Contact() {
         className="pointer-events-none absolute inset-0 opacity-60"
         style={{
           backgroundImage:
-            "radial-gradient(circle at 1px 1px, rgba(233,235,228,0.18) 1px, transparent 0)",
+            "radial-gradient(circle at 1px 1px, color-mix(in srgb, var(--paper) 18%, transparent) 1px, transparent 0)",
           backgroundSize: "28px 28px",
         }}
       />

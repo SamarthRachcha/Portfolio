@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion, useScroll, useSpring } from "motion/react";
 import { GitHubMark } from "@/components/icons";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { GITHUB_URL } from "@/lib/projects";
 
 const nav = [
@@ -50,15 +51,19 @@ export function SiteHeader() {
             ))}
           </nav>
 
-          <a
-            href={GITHUB_URL}
-            target="_blank"
-            rel="noreferrer noopener"
-            aria-label="Samarth Rachcha on GitHub"
-            className="flex size-8 items-center justify-center border border-rule text-ink-muted transition-colors hover:border-ink hover:bg-ink hover:text-paper"
-          >
-            <GitHubMark className="size-3.5" />
-          </a>
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+
+            <a
+              href={GITHUB_URL}
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="Samarth Rachcha on GitHub"
+              className="flex size-8 items-center justify-center border border-rule text-ink-muted transition-colors hover:border-ink hover:bg-ink hover:text-paper"
+            >
+              <GitHubMark className="size-3.5" />
+            </a>
+          </div>
         </div>
       </div>
 

@@ -1,7 +1,11 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
+  color-scheme: light;
+
   --paper: #e9ebe4;
   --paper-raised: #f2f3ec;
   --ink: #14170f;
@@ -29,6 +33,37 @@
   --input: var(--rule);
   --ring: var(--accent);
   --radius: 0.25rem;
+}
+
+.dark {
+  color-scheme: dark;
+
+  --paper: #12140d;
+  --paper-raised: #191c12;
+  --ink: #e7e9e0;
+  --ink-muted: #9ba192;
+  --rule: #343a2b;
+  --accent: #7b84ff;
+  --signal: #e4694a;
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: var(--paper-raised);
+  --card-foreground: var(--ink);
+  --popover: #1c2016;
+  --popover-foreground: var(--ink);
+  --primary: var(--accent);
+  --primary-foreground: #0f110a;
+  --secondary: #23271c;
+  --secondary-foreground: var(--ink);
+  --muted: #23271c;
+  --muted-foreground: var(--ink-muted);
+  --accent-foreground: #0f110a;
+  --destructive: var(--signal);
+  --destructive-foreground: #12140d;
+  --border: var(--rule);
+  --input: var(--rule);
+  --ring: var(--accent);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -98,7 +133,6 @@
 
 @layer base {
   html {
-    color-scheme: light;
     scroll-padding-top: 5rem;
   }
 
