@@ -1,7 +1,6 @@
 import { ArrowDownRight, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { GitHubMark } from "@/components/icons";
-import { GITHUB_URL, RESUME_URL } from "@/lib/projects";
+import { RESUME_URL } from "@/lib/projects";
 
 const facts = [
   { label: "Public repositories", value: "14" },
@@ -57,16 +56,6 @@ export function Hero() {
                 <ArrowDownRight data-icon="inline-end" className="size-3.5" />
               </a>
             </Button>
-            <Button
-              asChild
-              variant="outline"
-              className="h-11 rounded-none border-ink/25 bg-transparent px-5 font-mono text-[0.6875rem] tracking-[0.14em] uppercase transition-colors hover:bg-ink hover:text-paper"
-            >
-              <a href={GITHUB_URL} target="_blank" rel="noreferrer noopener">
-                <GitHubMark data-icon="inline-start" className="size-3.5" />
-                GitHub
-              </a>
-            </Button>
             <a
               href={RESUME_URL}
               download="Samarth-Rachcha-Resume.pdf"
@@ -96,14 +85,6 @@ export function Hero() {
               </div>
             ))}
           </dl>
-          <a
-            href={`${GITHUB_URL}?tab=repositories`}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="label mt-4 inline-block text-ink-muted underline decoration-rule decoration-1 underline-offset-4 transition-colors hover:text-accent hover:decoration-accent"
-          >
-            Source of truth — GitHub
-          </a>
         </aside>
       </div>
     </div>
