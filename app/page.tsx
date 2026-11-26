@@ -18,13 +18,7 @@ export default function Home() {
       <main id="top">
         <Hero />
         <Credentials />
-        <Section
-          id="work"
-          index="01"
-          label="Selected work"
-          title="Five systems, end to end."
-          note="Open a row for the details. Five more repositories sit in the archive below."
-        >
+        <Section id="work" title="Projects">
           <WorkIndex />
           <ArchiveIndex />
         </Section>
