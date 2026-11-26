@@ -35,11 +35,22 @@ default cream/terracotta editorial look.
 - Background: `#E9EBE4` (sage paper)
 - Ink: `#14170F`
 - Accent: `#2A35E8` (ultramarine)
-- Signal: `#CE3F1D` (vermilion, used for errors and index numbers)
+- Signal: `#B33617` (vermilion, used for errors and index numbers)
 - Rule: `#C6CABB`
 - Display type: Instrument Serif
 - Body type: Instrument Sans
 - Data/year type: Geist Mono, used sparingly
+- Dark theme: same world, not a grey inversion. Paper `#12140D`, raised
+  `#191C12`, ink `#E7E9E0`, muted `#9BA192`, rule `#343A2B`, accent lifted to
+  `#7B84FF`, signal to `#E4694A`. The contact block inverts with it (`bg-ink
+  text-paper`), so it stays a contrasting "printed insert" rather than merging
+  into the page.
+- Theme switch: `.dark` on `<html>`, a pre-paint inline script in
+  `app/layout.tsx` (no flash), OS preference by default, explicit choice stored
+  in `localStorage`. `components/theme-toggle.tsx` reads the class through
+  `useSyncExternalStore` and swaps sun/moon in CSS, so hydration stays clean.
+  `@custom-variant dark` maps Tailwind's `dark:` utilities to the class. Print
+  forces the light palette.
 - Layout: 12-column, asymmetric, hairline rules, generous whitespace
 - Hero visual: hand-authored SVG decision boundary with scattered points and
   three deliberately misclassified ones.
@@ -124,6 +135,7 @@ components/
   smooth-scroll.tsx       client Lenis provider
   reveal.tsx              client Motion reveal wrapper
   site-header.tsx         sticky header + scroll progress
+  theme-toggle.tsx        light/dark switch, reads the .dark class
   hero.tsx
   work-index.tsx          expandable project rows
   project-figure.tsx      one SVG schematic per featured project

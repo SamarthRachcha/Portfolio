@@ -75,6 +75,21 @@
 }
 
 @media print {
+  :root,
+  .dark {
+    color-scheme: light;
+    --paper: #ffffff;
+    --paper-raised: #ffffff;
+    --ink: #000000;
+    --ink-muted: #333333;
+    --rule: #999999;
+    --accent: #2a35e8;
+    --signal: #b33617;
+    --background: var(--paper);
+    --foreground: var(--ink);
+    --border: var(--rule);
+  }
+
   [data-reveal] {
     opacity: 1 !important;
     transform: none !important;
