@@ -13,13 +13,7 @@ const pipeline = [
 
 export function Approach() {
   return (
-    <Section
-      id="approach"
-      index="02"
-      label="Approach"
-      title="Measured against something simple."
-      note="The habit behind every project here: make the baseline visible before trusting the model, and leave the data path open."
-    >
+    <Section id="approach" title="Approach">
       <Reveal>
         <div className="border-y border-rule py-5">
           <p className="label mb-4">The crowd-density pipeline</p>
