@@ -3,32 +3,6 @@ import { Section } from "@/components/section";
 import { Reveal } from "@/components/reveal";
 import { EMAIL } from "@/lib/projects";
 
-const background = [
-  {
-    label: "Education",
-    title: "B.Tech, Computer Science",
-    lines: [
-      "Artificial Intelligence & Data Science",
-      "MIT World Peace University, Pune",
-      "2021 — present",
-    ],
-  },
-  {
-    label: "Experience",
-    title: "Game Developer Trainee",
-    lines: ["Firebird VR", "February — May 2026", "Unity, C#"],
-  },
-  {
-    label: "Recognition",
-    title: "First Runner-Up",
-    lines: [
-      "iQOO Hackathon Pune 2026",
-      "Working professionals category",
-      "Grand finale participant",
-    ],
-  },
-];
-
 export function About() {
   return (
     <Section
@@ -78,24 +52,6 @@ export function About() {
           </div>
         </Reveal>
       </div>
-
-      <Reveal delay={0.12} className="mt-14 md:mt-16">
-        <div className="grid gap-8 border-t border-ink pt-6 md:grid-cols-3 md:gap-10">
-          {background.map((item) => (
-            <div key={item.label}>
-              <p className="label text-signal">{item.label}</p>
-              <p className="mt-3 font-serif text-xl leading-tight tracking-[-0.01em]">
-                {item.title}
-              </p>
-              <div className="mt-2 space-y-0.5 text-sm leading-6 text-ink-muted">
-                {item.lines.map((line) => (
-                  <p key={line}>{line}</p>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </Reveal>
     </Section>
   );
 }

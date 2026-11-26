@@ -2,7 +2,7 @@ import { About } from "@/components/about";
 import { Approach } from "@/components/approach";
 import { ArchiveIndex } from "@/components/archive-index";
 import { Contact } from "@/components/contact";
-import { DecisionBoundary } from "@/components/decision-boundary";
+import { Credentials } from "@/components/credentials";
 import { Hero } from "@/components/hero";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -17,7 +17,7 @@ export default function Home() {
       <SiteHeader />
       <main id="top">
         <Hero />
-        <DecisionBoundary />
+        <Credentials />
         <Section
           id="work"
           index="01"

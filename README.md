@@ -32,7 +32,7 @@ app/
   page.tsx                section composition
   globals.css             tokens, base styles, motion keyframes
 components/
-  decision-boundary.tsx   SVG hero figure
+  credentials.tsx         education / experience / recognition band
   smooth-scroll.tsx       Lenis root provider
   reveal.tsx              Motion scroll reveal
   site-header.tsx         sticky header + scroll progress
@@ -41,7 +41,7 @@ components/
   archive-index.tsx       compact repository list
   approach.tsx            pipeline strip + principles
   toolbox.tsx
-  about.tsx               bio + education/experience/recognition
+  about.tsx               bio note + email
   contact.tsx
   site-footer.tsx
   section.tsx             shared section shell

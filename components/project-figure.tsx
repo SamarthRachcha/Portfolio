@@ -966,7 +966,7 @@ export function ProjectFigure({
     <figure className="border border-rule bg-paper-raised/40">
       <div className="flex items-center justify-between gap-4 border-b border-rule/70 px-4 py-2.5 sm:px-5">
         <span className="label text-ink">
-          Fig. {String(index + 2).padStart(2, "0")} — Schematic
+          Fig. {String(index + 1).padStart(2, "0")} — Schematic
         </span>
         <span className="label text-ink-muted sm:hidden">Scroll →</span>
         <span className="label hidden text-ink-muted sm:block">

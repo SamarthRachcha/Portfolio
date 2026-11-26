@@ -52,12 +52,12 @@ default cream/terracotta editorial look.
   `@custom-variant dark` maps Tailwind's `dark:` utilities to the class. Print
   forces the light palette.
 - Layout: 12-column, asymmetric, hairline rules, generous whitespace
-- Hero visual: hand-authored SVG decision boundary with scattered points and
-  three deliberately misclassified ones.
+- Hero band: education, experience, and recognition sit directly under the hero
+  as a three-column ruled strip (`components/credentials.tsx`), not in About.
 - Project visuals: one hand-authored SVG schematic per featured project, inside
-  its expanded row (`components/project-figure.tsx`). Numbered `Fig. 02`–`Fig.
-  06` because the hero figure is `Fig. 01`. Each plate states "Diagram, not a
-  screenshot" and is labelled as a schematic, so nothing implies a real capture.
+  its expanded row (`components/project-figure.tsx`). Numbered `Fig. 01`–`Fig.
+  05` in work order. Each plate states "Diagram, not a screenshot" and is
+  labelled as a schematic, so nothing implies a real capture.
   On narrow screens the plate keeps a 520px minimum width and scrolls
   horizontally (with a `Scroll →` hint and a styled thin scrollbar).
 
@@ -131,7 +131,7 @@ app/
   page.tsx                section composition
   globals.css             design tokens, base styles, motion keyframes
 components/
-  decision-boundary.tsx   SVG hero figure
+  credentials.tsx         education / experience / recognition band
   smooth-scroll.tsx       client Lenis provider
   reveal.tsx              client Motion reveal wrapper
   site-header.tsx         sticky header + scroll progress
@@ -142,7 +142,7 @@ components/
   archive-index.tsx       compact repository table
   approach.tsx            pipeline strip + principles
   toolbox.tsx
-  about.tsx               bio + education/experience/recognition
+  about.tsx               bio note + email
   contact.tsx             email, GitHub, LinkedIn, résumé
   site-footer.tsx
   section.tsx             shared section shell
