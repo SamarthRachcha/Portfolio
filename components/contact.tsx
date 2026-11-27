@@ -96,9 +96,6 @@ export function Contact() {
                   <dd>MIT World Peace University</dd>
                 </div>
               </dl>
-              <p className="mt-5 text-xs leading-5 text-paper/60">
-                No live demos yet. The repositories are the record.
-              </p>
             </div>
           </div>
         </div>
