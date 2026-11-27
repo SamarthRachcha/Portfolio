@@ -5,11 +5,8 @@ import { GITHUB_URL, archive } from "@/lib/projects";
 export function ArchiveIndex() {
   return (
     <Reveal delay={0.06} className="mt-14 md:mt-16">
-      <div className="flex items-baseline justify-between gap-4 border-b border-ink pb-3">
+      <div className="border-b border-ink pb-3">
         <h3 className="label text-ink">Also in the archive</h3>
-        <span className="label">
-          {String(archive.length).padStart(2, "0")} repos
-        </span>
       </div>
 
       <ul>
