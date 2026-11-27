@@ -20,9 +20,6 @@ export function Hero() {
           />
           Portfolio — 2026
         </p>
-        <p className="label hidden sm:block">
-          Machine learning · Interfaces · Data
-        </p>
       </div>
 
       <div className="grid gap-10 pt-14 pb-16 md:grid-cols-12 md:gap-8 md:pt-24 md:pb-24">
