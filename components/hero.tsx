@@ -4,9 +4,7 @@ import { RESUME_URL } from "@/lib/projects";
 
 const facts = [
   { label: "Public repositories", value: "14" },
-  { label: "Featured systems", value: "05" },
   { label: "Primary stack", value: "Python / TS / C#" },
-  { label: "Based in", value: "Pune, India" },
 ];
 
 export function Hero() {
@@ -69,7 +67,7 @@ export function Hero() {
           style={{ animationDelay: "320ms" }}
         >
           <p className="label mb-3">At a glance</p>
-          <dl className="grid grid-cols-2 gap-px border-y border-rule bg-rule sm:grid-cols-4 xl:block xl:bg-transparent">
+          <dl className="grid grid-cols-2 gap-px border-y border-rule bg-rule xl:block xl:bg-transparent">
             {facts.map((fact) => (
               <div
                 key={fact.label}
