@@ -36,7 +36,7 @@ export function ArchiveIndex() {
         ))}
       </ul>
 
-      <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
+      <div className="mt-6">
         <a
           href={`${GITHUB_URL}?tab=repositories`}
           target="_blank"
@@ -46,7 +46,6 @@ export function ArchiveIndex() {
           All fourteen repositories
           <ArrowUpRight aria-hidden="true" className="size-3" />
         </a>
-        <span className="label text-ink-muted">Updated November 2026</span>
       </div>
     </Reveal>
   );
