@@ -19,11 +19,8 @@ export function Contact() {
       />
 
       <div className="relative mx-auto max-w-[88rem] px-6 md:px-10">
-        <div className="flex items-center justify-between gap-4 border-b border-paper/15 py-3">
-          <span className="label text-paper/60">05 — Contact</span>
-          <span className="label hidden text-paper/60 sm:block">
-            Pune, India · UTC +5:30
-          </span>
+        <div className="border-b border-paper/15 py-3">
+          <span className="label text-paper/60">Contact</span>
         </div>
 
         <div className="grid gap-12 py-16 md:grid-cols-12 md:gap-8 md:py-24">
