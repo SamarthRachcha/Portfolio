@@ -7,9 +7,9 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { GITHUB_URL } from "@/lib/projects";
 
 const nav = [
-  { href: "#work", label: "Work" },
+  { href: "#work", label: "Projects" },
   { href: "#approach", label: "Approach" },
-  { href: "#toolbox", label: "Toolbox" },
+  { href: "#toolbox", label: "Tech Stack" },
   { href: "#about", label: "About" },
   { href: "#contact", label: "Contact" },
 ];
