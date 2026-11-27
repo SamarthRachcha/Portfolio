@@ -5,12 +5,7 @@ import { EMAIL } from "@/lib/projects";
 
 export function About() {
   return (
-    <Section
-      id="about"
-      index="04"
-      label="About"
-      title="A short note on how I work."
-    >
+    <Section id="about" title="About me">
       <div className="grid gap-12 md:grid-cols-12 md:gap-8">
         <Reveal className="md:col-span-5">
           <p className="font-serif text-[clamp(1.7rem,2.9vw,2.4rem)] leading-[1.12] tracking-[-0.015em] text-balance">
