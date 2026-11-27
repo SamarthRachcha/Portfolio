@@ -4,13 +4,7 @@ import { alsoInTheKit, toolbox } from "@/lib/projects";
 
 export function Toolbox() {
   return (
-    <Section
-      id="toolbox"
-      index="03"
-      label="Toolbox"
-      title="The instruments I reach for."
-      note="Grouped by what they are for, not by how impressive they sound. Everything listed has shipped in at least one repository."
-    >
+    <Section id="toolbox" title="Tech Stack">
       <div className="grid gap-10 md:grid-cols-3 md:gap-8">
         {toolbox.map((group, index) => (
           <Reveal key={group.label} delay={index * 0.06}>
