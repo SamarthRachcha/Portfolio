@@ -78,26 +78,6 @@ export function Contact() {
               </a>
             </div>
           </div>
-
-          <div className="flex items-end md:col-span-3 md:col-start-10">
-            <div className="w-full border-t border-paper/15 pt-4">
-              <p className="label text-paper/60">Elsewhere</p>
-              <dl className="mt-3 space-y-2 text-sm leading-6 text-paper/60">
-                <div>
-                  <dt className="sr-only">Location</dt>
-                  <dd>Pune, Maharashtra, India</dd>
-                </div>
-                <div>
-                  <dt className="sr-only">Study</dt>
-                  <dd>B.Tech CSE, AI &amp; Data Science</dd>
-                </div>
-                <div>
-                  <dt className="sr-only">University</dt>
-                  <dd>MIT World Peace University</dd>
-                </div>
-              </dl>
-            </div>
-          </div>
         </div>
       </div>
     </section>
