@@ -39,7 +39,7 @@ components/
   hero.tsx
   work-index.tsx          expandable featured-project rows
   archive-index.tsx       compact repository list
-  approach.tsx            pipeline strip + principles
+  approach.tsx            pipeline strips + principles
   toolbox.tsx
   about.tsx               bio note + email
   contact.tsx

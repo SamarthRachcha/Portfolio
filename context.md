@@ -141,7 +141,7 @@ components/
   work-index.tsx          expandable project rows
   project-figure.tsx      one SVG schematic per featured project
   archive-index.tsx       compact repository table
-  approach.tsx            pipeline strip + principles
+  approach.tsx            pipeline strips + principles
   toolbox.tsx
   about.tsx               bio note + email
   contact.tsx             email, GitHub, LinkedIn, résumé
