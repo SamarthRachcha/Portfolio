@@ -72,7 +72,7 @@ content visible without JavaScript.
 
 - Email: `samarth.rachcha@gmail.com`
 - LinkedIn: `https://www.linkedin.com/in/samarth-r-38782b196/`
-- Discord: `sam_7249` (handle only; the contact button copies it)
+- Discord: `sam_7249` — `https://discord.com/users/458411121813094412` (the contact button links to the profile and copies the handle)
 - Location: Pune, Maharashtra, India (UTC+5:30)
 - Education: B.Tech CSE, Artificial Intelligence & Data Science, MIT World
   Peace University, Pune, 2021 – present

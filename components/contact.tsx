@@ -36,7 +36,7 @@ export function Contact() {
               reach me. The code for everything on this page is public.
             </p>
 
-            <div className="mt-10 flex flex-wrap items-center gap-3">
+            <div className="mt-10 flex flex-wrap items-center gap-2.5">
               <a
                 href={`mailto:${EMAIL}`}
                 className="group inline-flex items-center gap-2.5 bg-paper px-4 py-3.5 font-mono text-[0.65rem] tracking-[0.08em] text-ink uppercase transition-colors duration-300 hover:bg-accent hover:text-paper sm:px-5 sm:text-[0.7rem]"
