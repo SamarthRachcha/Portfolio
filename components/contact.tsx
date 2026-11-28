@@ -1,4 +1,5 @@
 import { ArrowUpRight, FileText, Mail } from "lucide-react";
+import { CopyDiscord } from "@/components/copy-discord";
 import { GitHubMark } from "@/components/icons";
 import { EMAIL, GITHUB_URL, LINKEDIN_URL, RESUME_URL } from "@/lib/projects";
 
@@ -67,6 +68,8 @@ export function Contact() {
                 LinkedIn
                 <ArrowUpRight aria-hidden="true" className="size-3.5" />
               </a>
+
+              <CopyDiscord />
 
               <a
                 href={RESUME_URL}

@@ -72,6 +72,7 @@ content visible without JavaScript.
 
 - Email: `samarth.rachcha@gmail.com`
 - LinkedIn: `https://www.linkedin.com/in/samarth-r-38782b196/`
+- Discord: `sam_7249` (handle only; the contact button copies it)
 - Location: Pune, Maharashtra, India (UTC+5:30)
 - Education: B.Tech CSE, Artificial Intelligence & Data Science, MIT World
   Peace University, Pune, 2021 – present
@@ -144,7 +145,7 @@ components/
   approach.tsx            pipeline strips + principles
   toolbox.tsx
   about.tsx               bio note + email
-  contact.tsx             email, GitHub, LinkedIn, résumé
+  contact.tsx             email, GitHub, LinkedIn, Discord, résumé
   site-footer.tsx
   section.tsx             shared section shell
   ui/                     shadcn components
