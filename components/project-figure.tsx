@@ -1424,11 +1424,8 @@ export function ProjectFigure({
       >
         <div className="min-w-[520px] px-4 py-5 sm:px-6">{plate.art}</div>
       </div>
-      <figcaption className="flex flex-col gap-1 border-t border-rule/70 px-4 py-3 text-xs leading-5 text-ink-muted sm:flex-row sm:items-baseline sm:justify-between sm:gap-6 sm:px-5">
+      <figcaption className="border-t border-rule/70 px-4 py-3 text-xs leading-5 text-ink-muted sm:px-5">
         <span className="max-w-xl">{plate.caption}</span>
-        <span className="shrink-0 font-mono text-[0.625rem] tracking-[0.08em] uppercase">
-          Diagram, not a screenshot
-        </span>
       </figcaption>
     </figure>
   );

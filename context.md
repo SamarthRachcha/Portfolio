@@ -56,8 +56,8 @@ default cream/terracotta editorial look.
   as a three-column ruled strip (`components/credentials.tsx`), not in About.
 - Project visuals: one hand-authored SVG schematic per featured project, inside
   its expanded row (`components/project-figure.tsx`). Numbered `Fig. 01`–`Fig.
-  05` in work order. Each plate states "Diagram, not a screenshot" and is
-  labelled as a schematic, so nothing implies a real capture.
+  07` in work order. Each plate is labelled "Schematic" in its header, so
+  nothing implies a real capture.
   On narrow screens the plate keeps a 520px minimum width and scrolls
   horizontally (with a `Scroll →` hint and a styled thin scrollbar).
 
