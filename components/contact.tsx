@@ -1,6 +1,6 @@
 import { ArrowUpRight, FileText, Mail } from "lucide-react";
 import { CopyDiscord } from "@/components/copy-discord";
-import { GitHubMark } from "@/components/icons";
+import { GitHubMark, LinkedInMark } from "@/components/icons";
 import { EMAIL, GITHUB_URL, LINKEDIN_URL, RESUME_URL } from "@/lib/projects";
 
 export function Contact() {
@@ -65,6 +65,7 @@ export function Contact() {
                 rel="noreferrer noopener"
                 className="inline-flex items-center gap-2.5 border border-paper/25 px-4 py-3.5 font-mono text-[0.65rem] tracking-[0.1em] uppercase transition-colors duration-300 hover:border-paper hover:bg-paper hover:text-ink sm:text-[0.7rem]"
               >
+                <LinkedInMark aria-hidden="true" className="size-3.5 shrink-0" />
                 LinkedIn
                 <ArrowUpRight aria-hidden="true" className="size-3.5" />
               </a>
