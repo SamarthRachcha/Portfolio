@@ -90,13 +90,14 @@ before adding it or the résumé PDF itself to `public/`.
 | Financial Advisor Agent | `AgenticAI` | Flask + LangChain + Gemini, deterministic finance calculators, NewsAPI context; part of a broader agentic platform |
 | Beverage Recommender | `Big-Data-Project` | PySpark ALS on 1.5M reviews, 80/20 split, RMSE 0.55 |
 | Digit Recognition from Scratch | `HandwrittenDigitRecognition` | NumPy two-layer network, manual backprop, SMOTE, scikit-learn evaluation |
-| Habit Tracker | `Habit-Tracker` | React + TypeScript + Vite + date-fns, typed component boundaries |
+| Text Generation with LSTMs | `Text_Generation_AI` | TensorFlow/Keras, two 128-unit LSTM layers, 10-word windows, 1M-character news corpus, top-k sampling |
+| Twitter Bot Detection | `NLP-Project` | TF-IDF over tweet text and profile fields, hstacked with account metadata, random forest, 80/20 split |
+| MobileNetV2 Inference | `Deep-Learning-Project` | Pre-trained Keras MobileNetV2, 224 × 224 input, single forward pass, top-5 ImageNet decode |
 
 ### Archive
 
-Text generation with LSTMs (`Text_Generation_AI`), Twitter bot detection
-(`NLP-Project`), MobileNetV2 inference (`Deep-Learning-Project`), to-do list
-(`To-Do-List`), PC parts storefront (`Website`).
+Habit tracker (`Habit-Tracker`), to-do list (`To-Do-List`), PC parts storefront
+(`Website`).
 
 Years come from the résumé where it gives one, otherwise from the repository's
 creation date. `Machine-Learning-Project` duplicates the digit-recognition work

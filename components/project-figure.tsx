@@ -771,144 +771,566 @@ function DigitArt() {
   );
 }
 
-/* ---------------------------------------------------------------- habit -- */
+/* ------------------------------------------------------------- text gen -- */
 
-const makeRandom = (seed: number) => {
-  let state = seed;
-  return () => {
-    state = (state * 1664525 + 1013904223) >>> 0;
-    return state / 4294967296;
-  };
-};
+const contextWords = [
+  "the",
+  "panel",
+  "said",
+  "it",
+  "may",
+  "vote",
+  "on",
+  "the",
+  "plan",
+  "soon",
+];
 
-const habitRandom = makeRandom(41);
+const nextWords = [
+  { word: "vote", probability: 0.34 },
+  { word: "next", probability: 0.21 },
+  { word: "week", probability: 0.16 },
+  { word: "meeting", probability: 0.09 },
+  { word: "election", probability: 0.05 },
+];
 
-const habitCells = Array.from({ length: 140 }, (_, index) => {
-  const col = Math.floor(index / 7);
-  const density = col < 4 ? 0.4 : col < 10 ? 0.85 : col < 13 ? 0.2 : 0.9;
-  const roll = habitRandom();
-  return roll > density ? 0 : 0.22 + roll * 0.7;
-});
-
-function HabitArt() {
+function TextGenArt() {
   return (
     <svg
       viewBox="0 0 720 180"
       role="img"
-      aria-labelledby="fig-habit-title fig-habit-desc"
+      aria-labelledby="fig-text-title fig-text-desc"
       className="block h-auto w-full"
     >
-      <title id="fig-habit-title">
-        Habit tracker: day grid, toggles and streak
+      <title id="fig-text-title">
+        Text generation: ten-word context, stacked LSTMs, next-word probabilities
       </title>
-      <desc id="fig-habit-desc">
-        A seven-row grid of daily check-ins, with an enlarged day toggle and a
-        streak counter beside it.
+      <desc id="fig-text-desc">
+        Ten context words feed two 128-unit LSTM layers, which score every
+        candidate next word; the model samples from the most likely ones.
       </desc>
 
+      <text x="0" y="12" style={smallStyle} fill="var(--ink-muted)">
+        CONTEXT
+      </text>
+      <text x="196" y="12" style={smallStyle} fill="var(--ink-muted)">
+        LSTM
+      </text>
+      <text x="352" y="12" style={smallStyle} fill="var(--ink-muted)">
+        NEXT WORD
+      </text>
+
+      {contextWords.map((word, index) => {
+        const col = index % 5;
+        const row = Math.floor(index / 5);
+        return (
+          <g key={`${word}-${index}`}>
+            <rect
+              x={col * 32}
+              y={24 + row * 28}
+              width="28"
+              height="20"
+              fill="var(--paper)"
+              stroke="var(--rule)"
+            />
+            <text
+              x={col * 32 + 14}
+              y={37 + row * 28}
+              style={{ fontFamily: mono, fontSize: 8 }}
+              fill="var(--ink)"
+              textAnchor="middle"
+            >
+              {word}
+            </text>
+          </g>
+        );
+      })}
+
+      <Arrow x1={164} x2={188} y={62} />
+
       <g>
-        {habitCells.map((opacity, index) => {
-          const col = Math.floor(index / 7);
-          const row = index % 7;
+        <rect
+          x="196"
+          y="26"
+          width="112"
+          height="32"
+          fill="var(--paper)"
+          stroke="var(--ink)"
+          strokeWidth="1.2"
+        />
+        <rect
+          x="196"
+          y="62"
+          width="112"
+          height="32"
+          fill="var(--paper)"
+          stroke="var(--ink)"
+          strokeWidth="1.2"
+        />
+        <line
+          x1="252"
+          y1="58"
+          x2="252"
+          y2="62"
+          stroke="var(--ink)"
+          strokeWidth="1"
+        />
+        <path
+          d="M 248,62 L 252,66 L 256,62"
+          fill="none"
+          stroke="var(--ink)"
+          strokeWidth="1"
+        />
+        <text
+          x="252"
+          y="46"
+          style={{ fontFamily: mono, fontSize: 10, letterSpacing: "0.08em" }}
+          fill="var(--ink)"
+          textAnchor="middle"
+        >
+          128
+        </text>
+        <text
+          x="252"
+          y="82"
+          style={{ fontFamily: mono, fontSize: 10, letterSpacing: "0.08em" }}
+          fill="var(--ink)"
+          textAnchor="middle"
+        >
+          128
+        </text>
+      </g>
+
+      <Arrow x1={316} x2={340} y={60} />
+
+      <g>
+        {nextWords.map((candidate, index) => {
+          const y = 24 + index * 20;
+          const width = candidate.probability * 680;
+          return (
+            <g key={candidate.word}>
+              <text
+                x="352"
+                y={y + 8}
+                style={{ fontFamily: sans, fontSize: 11 }}
+                fill={index === 0 ? "var(--ink)" : "var(--ink-muted)"}
+              >
+                {candidate.word}
+              </text>
+              <rect
+                x="430"
+                y={y + 1}
+                width={width}
+                height="7"
+                fill={index === 0 ? "var(--accent)" : "var(--ink)"}
+                fillOpacity={index === 0 ? 1 : 0.18}
+              />
+              <text
+                x="716"
+                y={y + 8}
+                style={smallStyle}
+                fill={index === 0 ? "var(--accent)" : "var(--ink-muted)"}
+                textAnchor="end"
+              >
+                {candidate.probability.toFixed(2)}
+              </text>
+            </g>
+          );
+        })}
+      </g>
+
+      <text x="0" y="150" style={smallStyle} fill="var(--ink-muted)">
+        1M CHARACTERS · NEWS CORPUS
+      </text>
+      <text
+        x="716"
+        y="150"
+        style={smallStyle}
+        fill="var(--ink-muted)"
+        textAnchor="end"
+      >
+        SOFTMAX · TOP-K SAMPLING
+      </text>
+    </svg>
+  );
+}
+
+/* ------------------------------------------------------------------ bot -- */
+
+const termCells = Array.from({ length: 50 }, (_, index) => {
+  const col = index % 10;
+  const row = Math.floor(index / 10);
+  const active = (col * 7 + row * 3) % 9 < 3;
+  const weight = ((col * 5 + row * 7) % 6) / 5;
+  return { active, weight };
+});
+
+const botTrees = [398, 448, 498];
+
+function BotArt() {
+  return (
+    <svg
+      viewBox="0 0 720 180"
+      role="img"
+      aria-labelledby="fig-bot-title fig-bot-desc"
+      className="block h-auto w-full"
+    >
+      <title id="fig-bot-title">
+        Bot detection: tweet text, TF-IDF and metadata features, random forest
+      </title>
+      <desc id="fig-bot-desc">
+        A tweet becomes a TF-IDF vector, is combined with follower, retweet and
+        verification features, and is classified by a random forest.
+      </desc>
+
+      <text x="0" y="12" style={smallStyle} fill="var(--ink-muted)">
+        TWEET
+      </text>
+      <text x="146" y="12" style={smallStyle} fill="var(--ink-muted)">
+        TF-IDF
+      </text>
+      <text x="262" y="12" style={smallStyle} fill="var(--ink-muted)">
+        METADATA
+      </text>
+      <text x="398" y="12" style={smallStyle} fill="var(--ink-muted)">
+        FOREST
+      </text>
+      <text x="552" y="12" style={smallStyle} fill="var(--ink-muted)">
+        LABEL
+      </text>
+
+      <g>
+        <rect
+          x="0"
+          y="24"
+          width="112"
+          height="76"
+          fill="var(--paper)"
+          stroke="var(--rule)"
+        />
+        <circle cx="17" cy="40" r="6" fill="var(--ink)" opacity="0.28" />
+        <line x1="30" y1="36" x2="100" y2="36" stroke="var(--ink)" strokeOpacity="0.35" strokeWidth="2" />
+        <line x1="30" y1="44" x2="86" y2="44" stroke="var(--ink)" strokeOpacity="0.2" strokeWidth="2" />
+        <line x1="10" y1="62" x2="102" y2="62" stroke="var(--ink)" strokeOpacity="0.35" strokeWidth="2" />
+        <line x1="10" y1="72" x2="94" y2="72" stroke="var(--ink)" strokeOpacity="0.35" strokeWidth="2" />
+        <line x1="10" y1="82" x2="62" y2="82" stroke="var(--ink)" strokeOpacity="0.2" strokeWidth="2" />
+      </g>
+
+      <Arrow x1={120} x2={140} y={62} />
+
+      <g>
+        {termCells.map((cell, index) => {
+          const col = index % 10;
+          const row = Math.floor(index / 10);
           return (
             <rect
               key={index}
-              x={col * 14}
-              y={12 + row * 14}
-              width="10"
-              height="10"
-              fill="var(--accent)"
-              fillOpacity={opacity}
-              stroke={opacity === 0 ? "var(--rule)" : "transparent"}
-              strokeWidth="0.8"
+              x={146 + col * 9.5}
+              y={28 + row * 9.5}
+              width="8"
+              height="8"
+              fill={cell.active ? "var(--accent)" : "transparent"}
+              fillOpacity={cell.active ? 0.3 + cell.weight * 0.65 : 0}
+              stroke="var(--rule)"
+              strokeWidth="0.6"
             />
           );
         })}
       </g>
 
-      <line
-        x1="318"
-        y1="12"
-        x2="318"
-        y2="110"
-        stroke="var(--rule)"
-        strokeWidth="1"
-      />
+      <text
+        x="250"
+        y="58"
+        style={{ fontFamily: mono, fontSize: 16 }}
+        fill="var(--ink-muted)"
+        textAnchor="middle"
+      >
+        +
+      </text>
+
+      <g>
+        {[
+          { label: "followers", value: "2.2k" },
+          { label: "retweets", value: "54" },
+          { label: "verified", value: "1" },
+        ].map((row, index) => (
+          <g key={row.label}>
+            <rect
+              x="262"
+              y={30 + index * 20}
+              width="92"
+              height="16"
+              fill="var(--paper)"
+              stroke="var(--rule)"
+            />
+            <text
+              x="268"
+              y={41 + index * 20}
+              style={{ fontFamily: mono, fontSize: 7.5 }}
+              fill="var(--ink-muted)"
+            >
+              {row.label}
+            </text>
+            <text
+              x="348"
+              y={41 + index * 20}
+              style={{ fontFamily: mono, fontSize: 7.5 }}
+              fill="var(--ink)"
+              textAnchor="end"
+            >
+              {row.value}
+            </text>
+          </g>
+        ))}
+      </g>
+
+      <Arrow x1={360} x2={380} y={58} />
+
+      <g>
+        {botTrees.map((cx) => (
+          <g key={cx} stroke="var(--ink)" strokeWidth="1" fill="none">
+            <line x1={cx} y1="32" x2={cx - 10} y2="58" />
+            <line x1={cx} y1="32" x2={cx + 10} y2="58" />
+            <line x1={cx - 10} y1="58" x2={cx - 16} y2="84" />
+            <line x1={cx - 10} y1="58" x2={cx - 4} y2="84" />
+            <line x1={cx + 10} y1="58" x2={cx + 4} y2="84" />
+            <line x1={cx + 10} y1="58" x2={cx + 16} y2="84" />
+            <circle cx={cx} cy="32" r="2.4" fill="var(--paper)" />
+            <circle cx={cx - 10} cy="58" r="2.4" fill="var(--paper)" />
+            <circle cx={cx + 10} cy="58" r="2.4" fill="var(--paper)" />
+            <circle cx={cx - 16} cy="84" r="2.2" fill="var(--paper)" />
+            <circle cx={cx - 4} cy="84" r="2.2" fill="var(--paper)" />
+            <circle cx={cx + 4} cy="84" r="2.2" fill="var(--paper)" />
+            <circle cx={cx + 16} cy="84" r="2.2" fill="var(--paper)" />
+          </g>
+        ))}
+      </g>
+
+      <Arrow x1={522} x2={542} y={58} />
 
       <g>
         <text
-          x="346"
-          y="72"
+          x="552"
+          y="60"
           style={{ fontFamily: "var(--font-instrument-serif), Georgia, serif" }}
-          fontSize="62"
+          fontSize="34"
           fill="var(--ink)"
         >
-          12
+          BOT
         </text>
-        <text x="348" y="94" style={smallStyle} fill="var(--ink-muted)">
-          DAY STREAK
+        <text
+          x="552"
+          y="82"
+          style={{ fontFamily: mono, fontSize: 12, letterSpacing: "0.08em" }}
+          fill="var(--accent)"
+        >
+          0.87
         </text>
+        <rect x="552" y="90" width="140" height="4" fill="var(--ink)" fillOpacity="0.12" />
+        <rect x="552" y="90" width="122" height="4" fill="var(--accent)" />
       </g>
 
-      <g>
-        {[0, 1, 2].map((index) => (
-          <g key={index}>
-            <rect
-              x={500 + index * 36}
-              y="30"
-              width="26"
-              height="26"
-              fill={index === 2 ? "transparent" : "var(--accent)"}
-              fillOpacity={index === 2 ? 0 : 0.14}
-              stroke={index === 2 ? "var(--rule)" : "var(--accent)"}
-              strokeWidth="1"
-            />
-            {index < 2 ? (
-              <path
-                d={`M ${506 + index * 36} 43 L ${511 + index * 36} 49 L ${520 + index * 36} 37`}
-                fill="none"
-                stroke="var(--accent)"
-                strokeWidth="1.6"
-              />
-            ) : null}
-          </g>
-        ))}
-        <text x="500" y="76" style={smallStyle} fill="var(--ink-muted)">
-          DAY TOGGLE
-        </text>
-        <text x="500" y="92" style={smallStyle} fill="var(--ink-muted)">
-          DATE-FNS · SAME DAY
-        </text>
-        <text x="500" y="114" style={smallStyle} fill="var(--ink-muted)">
-          LESS
-        </text>
-        {[0.16, 0.36, 0.6, 0.9].map((opacity, index) => (
-          <rect
-            key={opacity}
-            x={534 + index * 12}
-            y="105"
-            width="8"
-            height="8"
-            fill="var(--accent)"
-            fillOpacity={opacity}
-          />
-        ))}
-        <text x="586" y="114" style={smallStyle} fill="var(--ink-muted)">
-          MORE
-        </text>
-      </g>
-
-      <text x="0" y="146" style={smallStyle} fill="var(--ink-muted)">
-        DAILY CHECK-INS · 20 WEEKS
+      <text x="0" y="150" style={smallStyle} fill="var(--ink-muted)">
+        TEXT + METADATA · 80/20 SPLIT
       </text>
       <text
         x="716"
-        y="146"
+        y="150"
         style={smallStyle}
         fill="var(--ink-muted)"
         textAnchor="end"
       >
-        TYPED STATE · NO STORE
+        RANDOM FOREST
+      </text>
+    </svg>
+  );
+}
+
+/* ------------------------------------------------------------- mobilenet -- */
+
+const convBlocks = [92, 78, 64, 50, 36, 24];
+
+const softmaxBars = [14, 26, 52, 38, 20, 30, 44, 18, 24, 12];
+
+const topFive = [
+  { label: "golden retriever", score: 0.62 },
+  { label: "Labrador retriever", score: 0.14 },
+  { label: "cocker spaniel", score: 0.07 },
+  { label: "vizsla", score: 0.04 },
+  { label: "saluki", score: 0.02 },
+];
+
+function MobileNetArt() {
+  return (
+    <svg
+      viewBox="0 0 720 180"
+      role="img"
+      aria-labelledby="fig-mobile-title fig-mobile-desc"
+      className="block h-auto w-full"
+    >
+      <title id="fig-mobile-title">
+        MobileNetV2: image input, convolutional blocks, top-5 predictions
+      </title>
+      <desc id="fig-mobile-desc">
+        A 224 by 224 image passes through the pre-trained convolutional stack,
+        becomes a softmax distribution over classes, and decodes to five labels.
+      </desc>
+
+      <text x="0" y="12" style={smallStyle} fill="var(--ink-muted)">
+        INPUT
+      </text>
+      <text x="132" y="12" style={smallStyle} fill="var(--ink-muted)">
+        CONVOLUTIONS
+      </text>
+      <text x="328" y="12" style={smallStyle} fill="var(--ink-muted)">
+        SOFTMAX
+      </text>
+      <text x="496" y="12" style={smallStyle} fill="var(--ink-muted)">
+        TOP-5
+      </text>
+
+      <g>
+        <rect
+          x="0"
+          y="24"
+          width="96"
+          height="96"
+          fill="var(--paper)"
+          stroke="var(--ink)"
+          strokeWidth="1.2"
+        />
+        <circle
+          cx="30"
+          cy="50"
+          r="8"
+          fill="none"
+          stroke="var(--ink)"
+          strokeOpacity="0.5"
+        />
+        <path
+          d="M 8 106 L 36 68 L 56 90 L 70 74 L 88 106 Z"
+          fill="var(--ink)"
+          fillOpacity="0.12"
+          stroke="var(--ink)"
+          strokeOpacity="0.45"
+        />
+        <line
+          x1="8"
+          y1="106"
+          x2="88"
+          y2="106"
+          stroke="var(--ink)"
+          strokeOpacity="0.45"
+        />
+        <text
+          x="48"
+          y="134"
+          style={smallStyle}
+          fill="var(--ink-muted)"
+          textAnchor="middle"
+        >
+          224 × 224
+        </text>
+      </g>
+
+      <Arrow x1={104} x2={124} y={72} />
+
+      <g>
+        {convBlocks.map((height, index) => (
+          <rect
+            key={height}
+            x={132 + index * 28}
+            y={72 - height / 2}
+            width="22"
+            height={height}
+            fill={index === convBlocks.length - 1 ? "var(--accent)" : "var(--ink)"}
+            fillOpacity={index === convBlocks.length - 1 ? 0.9 : 0.1 + index * 0.06}
+          />
+        ))}
+        <text
+          x="202"
+          y="134"
+          style={smallStyle}
+          fill="var(--ink-muted)"
+          textAnchor="middle"
+        >
+          MOBILENETV2 · IMAGENET
+        </text>
+      </g>
+
+      <Arrow x1={302} x2={322} y={72} />
+
+      <g>
+        {softmaxBars.map((height, index) => (
+          <rect
+            key={index}
+            x={328 + index * 14}
+            y={108 - height}
+            width="9"
+            height={height}
+            fill={index === 2 ? "var(--accent)" : "var(--ink)"}
+            fillOpacity={index === 2 ? 1 : 0.16}
+          />
+        ))}
+        <line
+          x1="322"
+          y1="108"
+          x2="466"
+          y2="108"
+          stroke="var(--rule)"
+          strokeWidth="1"
+        />
+      </g>
+
+      <Arrow x1={470} x2={490} y={72} />
+
+      <g>
+        {topFive.map((row, index) => {
+          const y = 26 + index * 20;
+          return (
+            <g key={row.label}>
+              <text
+                x="496"
+                y={y}
+                style={{ fontFamily: sans, fontSize: 10 }}
+                fill={index === 0 ? "var(--ink)" : "var(--ink-muted)"}
+              >
+                {row.label}
+              </text>
+              <text
+                x="716"
+                y={y}
+                style={smallStyle}
+                fill={index === 0 ? "var(--accent)" : "var(--ink-muted)"}
+                textAnchor="end"
+              >
+                {row.score.toFixed(2)}
+              </text>
+              {index === 0 ? (
+                <rect
+                  x="496"
+                  y={y + 4}
+                  width={row.score * 200}
+                  height="3"
+                  fill="var(--accent)"
+                />
+              ) : null}
+            </g>
+          );
+        })}
+      </g>
+
+      <text x="0" y="156" style={smallStyle} fill="var(--ink-muted)">
+        PRE-TRAINED · NO TRAINING
+      </text>
+      <text
+        x="716"
+        y="156"
+        style={smallStyle}
+        fill="var(--ink-muted)"
+        textAnchor="end"
+      >
+        TOP-5 DECODE
       </text>
     </svg>
   );
@@ -943,11 +1365,23 @@ const plates: Record<string, Plate> = {
       "A 28 × 28 image flattened to 784 inputs, one 40-neuron hidden layer, ten output scores. Every weight update is written out by hand.",
     art: <DigitArt />,
   },
-  "habit-tracker": {
-    meta: "grid → toggle → streak",
+  "text-generation-lstm": {
+    meta: "10 words → 2 × LSTM → next word",
     caption:
-      "Check-ins per day, a typed toggle per cell, and day comparisons done with date-fns rather than string keys.",
-    art: <HabitArt />,
+      "Ten words of context go through two 128-unit LSTM layers, which score every word in the vocabulary. The model samples from the top candidates rather than always taking the first.",
+    art: <TextGenArt />,
+  },
+  "twitter-bot-detection": {
+    meta: "text + metadata → forest",
+    caption:
+      "The tweet becomes a TF-IDF vector, then joins follower, retweet and verification counts. A random forest returns the label and its confidence.",
+    art: <BotArt />,
+  },
+  "mobilenet-inference": {
+    meta: "224 → conv stack → top-5",
+    caption:
+      "One forward pass through pre-trained MobileNetV2: the image is resized and preprocessed, the convolutional stack runs, and the scores decode to five ImageNet labels.",
+    art: <MobileNetArt />,
   },
 };
 
